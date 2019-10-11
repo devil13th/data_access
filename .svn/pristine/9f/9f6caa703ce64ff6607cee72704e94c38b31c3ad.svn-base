@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>sqlserverService</source_service>
+	<target_service>oracleService</target_service>
+	<tasklist>
+		<task id="P_SHIP_PIPE_OIL">
+			<source_table>bqtxt</source_table>
+			<target_table>P_SHIP_PIPE_OIL</target_table>
+
+			<import_type>INSERTORUPDATE</import_type>
+
+
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" ></column>
+				<column target="cjdjh" source="cjdjh" ></column>
+				<column target="item" source="mc"></column>
+				<column target="meta" source="cz"></column>
+				<column target="pressure_design" source="sjyl"></column>
+				<column target="pressure_test" source="syyl"></column>
+				<column target="zjxh" source="zjxh"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+	</tasklist>
+</dataaccess>

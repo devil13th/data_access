@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>oracle1Service</source_service>
+	<target_service>oracleService</target_service>
+	<tasklist>
+		<task id="hr_exam_program">
+			<source_table>KNOWLEDGECATEGORY</source_table>
+			<target_table>HR_EXAM_PROGRAM</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column source="KCID" target="PROGRAM_ID" key="true" />
+				<column source="KCNAME" target="PROGRAM_NAME" />
+				<column source="KCNUM" target="PROGRAM_NO" />
+				<column source="TINDEX" target="PROGRAM_SORT" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="hr_exam_subject">
+			<source_table>TESTQUES</source_table>
+			<target_table>HR_EXAM_SUBJECT</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column source="TQID" target="SUB_ID" key="true" />
+				<column source="TYPEID" target="SUB_TYPE" />
+				<column source="GRADE" target="SUB_LEVEL" />
+				<column source="SCORE" target="SUB_SCORE" />
+				<column source="TIME" target="ANSWER_TIME" />
+				<column source="COGNIZE" target="KN_LEVEL" />
+				<column source="DIFFICULTY" target="DICT_LEVEL" />
+				<!--  
+				<column source="" target="PROGRAM_NAME" />
+				<column source="" target="STORE_ID" />
+				<column source="" target="SUB_ANSWER" />
+				<column source="" target="PUB_STATUS" />
+				<column source="" target="IS_VALID" />
+				-->
+				<column source="CONTENT" target="SUB_TITLE" />
+				<!--
+				<column source="CONTENT" target="SUB_TITLE_TEXT" />
+				-->
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="hr_exam_subject_pro">
+			<source_table>TESTQUES</source_table>
+			<target_table>HR_EXAM_SUBJECT_PRO</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column source="TQID" target="SUB_ID" key="true" />
+				<column source="MTR" target="OPERATOR_NAME" />
+				<column source="PHONE" target="OPERATOR_TEL" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="hr_exam_r_program_subject">
+			<source_table>KNOWLEDGERESOURCE</source_table>
+			<target_table>HR_EXAM_R_PROGRAM_SUBJECT</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column source="KRID" target="RID" key="true" />
+				<column source="KCID" target="PROGRAM_ID" />
+				<column source="RBID" target="SUB_ID" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="hr_exam_options">
+			<source_table>TESTOPTIONANSWER</source_table>
+			<target_table>HR_EXAM_OPTIONS</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column source="TOAID" target="OPT_ID" key="true" />
+				<column source="TQID" target="SUB_ID" />
+				<column source="OPTIONNUM" target="OPTION_NO" />
+				<column source="OPTIONTEXT" target="OPTION_CONTENT" />
+				<column source="FLAG" target="IS_RIGHT" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+	</tasklist>
+</dataaccess>

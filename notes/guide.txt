@@ -1,0 +1,44 @@
+
+dataaccess/source_service
+源表service
+
+dataaccess/target_service
+目标表service
+
+dataaccess/import_type
+导入类型
+save:只保存
+update:只更新
+saveorupdate:根据column为key的字段有则更新没有则新增
+
+dataaccess/tasklist
+任务集合
+
+dataaccess/tasklist/task
+单个任务
+
+dataaccess/tasklist/task/source_table
+源表表名
+
+dataaccess/tasklist/task/target_table
+目标表表名
+
+dataaccess/tasklist/task/columns
+映射字段集合
+
+dataaccess/tasklist/task/columns/column
+单个字段映射 
+target:目标表字段名
+source:源表字段名
+generator:主键生成策略  COPY UUID
+primarykey:是否主键 true/false
+key:是否是导入标记 true/false 
+注：目标表字段是主键的时候源表字段名可以不写，但是主键生成策略不能是COPY
+
+
+dataaccess/tasklist/task/where
+源表过滤条件
+
+
+
+

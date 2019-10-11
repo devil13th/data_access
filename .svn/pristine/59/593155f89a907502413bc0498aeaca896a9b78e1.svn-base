@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>sqlserverService</source_service>
+	<target_service>mysqlService</target_service>
+	<tasklist>
+		<task id="ship">
+			<source_table>cbjbqk</source_table>
+			<target_table>ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<columns>
+				<column target="cjdjh" source="cjdjh" key="true"></column>
+				<column target="namecn" source="xycm" ></column>
+				<column target="haihechuan" source="hhc" ></column>
+				<column target="chuanjigang" source="cjg"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+	</tasklist>
+</dataaccess>

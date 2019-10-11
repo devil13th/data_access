@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="mysql1DataSource"
+		class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver">
+			<value>${mysql1.driverClassName}</value>
+		</property>
+		<property name="driverUrl">
+			<value>${mysql1.url}</value>
+		</property>
+		<property name="user" value="${mysql1.usr}" />
+		<property name="password" value="${mysql1.pwd}" />
+		<property name="alias" value="mysql1ProxoolPool" />
+		<property name="prototypeCount" value="0" />
+		<property name="maximumConnectionCount" value="50" />
+		<property name="minimumConnectionCount" value="2" />
+		<property name="maximumActiveTime" value="300000" />
+		<property name="simultaneousBuildThrottle" value="50" />
+		<property name="houseKeepingTestSql" value="select CURRENT_DATE" />
+	</bean>
+	<!-- 
+	<bean id="mysql1DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName"><value>${mysql1.driverClassName}</value></property>
+		<property name="url"><value>${mysql1.url}</value></property>
+		<property name="username"><value>${mysql1.usr}</value></property>
+		<property name="password"><value>${mysql1.pwd}</value></property>
+	</bean>
+	 -->
+	
+	
+	<bean id="mysql1JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="mysql1DataSource"/>
+		</property>
+	</bean>
+	
+	<bean id="mysql1Service" class="com.thd.dataaccess.service.impl.DBServiceImpl">
+		<property name="jdbcTemplate">
+			<ref bean="mysql1JdbcTemplate"/>
+		</property>
+	</bean>
+	
+	 
+</beans>

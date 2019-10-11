@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>sqlserverService</source_service>
+	<target_service>mysqlService</target_service>
+	<tasklist>
+		<task id="p_ship_hydrants">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_hydrants</target_table>
+			<import_type>SAVEORUPDATE</import_type>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" ></column>
+				<column target="cjdjh" source="cjdjh" ></column>
+				<column target="hydrants_number" source="xfssl" ></column>
+				<column target="hydrants_d" source="xfszj"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+	</tasklist>
+</dataaccess>

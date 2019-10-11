@@ -1,0 +1,4326 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>sqlserverService</source_service>
+	<target_service>oracle3Service</target_service>
+	
+	
+	
+	<tasklist>
+		
+		
+
+		
+	
+		<task id="ship1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<!--
+				<column source="xycm" target="shipname_cn" />
+				<column source="hhc" target="sea_inland" />
+				<column source="jdfjd" target="propelled" />
+				<column source="cblx" target="shiptype" />
+				<column source="hq" target="service_area" />
+				<column source="yyhq" target="sea_area" />
+				<column source="cbzc" target="loa" />
+				<column source="cxjc" target="lbp" />
+				<column source="sxc" target="waterline" />
+				<column source="xk" target="breadth" />
+				<column source="xs" target="depth" />
+				<column source="cgzs" target="draft1" />
+				<column source="sjzs" target="draft2" />
+				<column source="csmz" target="draft3" />
+				<column source="cskz" target="draft4" />
+				<column source="pslkz" target="weight" />
+				<column source="pslmz" target="displacement" />
+				<column source="zhl_jl" target="deadweight" />
+				<column source="i_tsrys	" target="save_life_equ_crew_num" />
+				<column source="mzzhl" target="load_cargo" />
+				<column source="ckzxl" target="load_ark" />
+				<column source="ckzql" target="load_gas" />
+				<column source="ckzcl" target="load_car" />
+				<column source="hs" target="speed" />
+				<column source="csa" target="csa" />
+				<column source="csm" target="csm" />
+				<column source="tzspjg" target="approval_unit" />
+				<column source="tzbh" target="approval_no" />
+				<column source="tzsph" target="draw_no" />
+				<column source="cbsjdw" target="draw_designer" />
+				<column source="cbzzc" target="builder" />
+				<column source="ccgcbh" target="yardno" />
+				<column source="v_jzdd" target="buildplace" />
+				<column source="cbcsdjh" target="reg_shipno" />
+				<column source="d_djrq" target="reg_date" />
+				<column source="cbhh" target="call_sign" />
+				<column source="zrrq" target="turn_in_date" />
+				<column source="yjyjg" target="turn_in_org" />
+				<column source="cblb" target="belong_category" />
+				<column source="fjcjzr" target="area_in_ship" />
+				<column source="gacbs" target="hk" />
+				<column source="flag" target="ship_flag" />
+				<column source="cbzl" target="custom_dangerous" />
+				<column source="cbzt" target="survey_status" />
+				<column source="stat" target="class_status" />
+				<column source="jzjyjg" target="building_add_org" />
+				<column source="bz" target="ship_remark" />
+				<column source="cjdjjgdm" target="reg_org_name" />
+				<column source="cjg" target="ship_port" />
+				<column source="zdck" target="breadth_max" />
+				<column source="imono" target="imono" />
+				<column source="jlhd" target="fast_area" />
+				<column source="cbjyr" target="ship_operator" />
+				<column source="qg" target="depth_max" />
+				<column source="cbsyr" target="ship_owner" />
+				<column source="hcsl" target="cargo_hold_num" />
+				<column source="cbdjh" target="ccsno" />
+				<column source="tzspjgd" target="id_cmsa" />
+				<column source="zdw" target="gross" />
+				<column source="zjzgl" target="main_machine_pow" />
+				<column source="jdw" target="net" />
+				-->
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship2">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" key="true" mark="true" />
+				<column source="tzcddw" target="draw_save" />
+				<column source="sbm" target="mmsi_code" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship3">
+			<source_table>cbsbhjy</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="v_cblxsm" target="shiptype_remark" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship4">
+			<source_table>cjg</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="ssdw" target="ship_port_org" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship5">
+			<source_table>ckdebc</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="kczl" target="passenger_shiptype" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship6">
+			<source_table>cymb</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cym" target="shipname_cn_his" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship7">
+			<source_table>cycssbbc</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="i_cyrs" target="sailor_number" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship8">
+			<source_table>dwzl</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />				
+				<column source="ldjbc" target="upper_deck_len" />
+				<column source="ldjbv1" target="v1" />
+				<column source="ldjbv2" target="v2" />
+				<column source="jbskv3" target="v3" />
+				<column source="jbshv4" target="v4" />
+				<column source="zlrq" target="hdw_date" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship9">
+			<source_table>hczzx</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zzxcc" target="load_line_wid" />
+				<column source="zzxxs" target="com_deep" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship10">
+			<source_table>sysm</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<custom_sql>select  jy.jybh as jybh,jy.jyrq as jyrq ,jy.cjdjh as cjdjh,t.zppssj as zppssj,t.cjdjhwz as cjdjhwz from sysm t left join jyqk jy on t.jybh = jy.jybh and jy.jyrq=(select  max(jy1.jyrq) from jyqk jy1 where jy1.cjdjh = jy.cjdjh and exists(select t2.jybh from sysm t2 where t2.jybh = jy.jybh ) ) where jy.cjdjh is not null  order by jy.cjdjh</custom_sql>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zppssj" target="photo_date" />
+				<column source="cjdjhwz" target="shipno_pos" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship11">
+			<source_table>wxdtxsb</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="sessbm" target="INMARSET_SES" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship12">
+			<source_table>hczzx</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<custom_sql>select a.cjdjh as cjdjh,a.hdgxcbzl as hdgxcbzl from hczzx a left join cbjbqk b on a.cjdjh = b.cjdjh where hhc like '海船'</custom_sql>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="hdgxcbzl" target="ll_typ" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship13">
+			<source_table>hczzx</source_table>
+			<target_table>p_ship</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<custom_sql>select a.cjdjh as cjdjh,a.hdgxcbzl as hdgxcbzl from zzxbc a left join cbjbqk b on a.cjdjh = b.cjdjh where hhc like '海船'</custom_sql>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="hdgxcbzl" target="ll_typ" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_notation">
+			<source_table>cbfjbz</source_table>
+			<target_table>p_ship_notation</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" />
+				<column target="notation" source="zwms" />
+				<column target="notation_en" source="ywms" />
+				<column target="hm" source="hm" />
+				<column target="is_tran" source="zsfy" />
+				<column target="notation_classify" source="fl" />
+				<column target="notation_remark" source="bz" />
+				<column target="notation_order" source="px" />
+				<column target="notation_id" source="xh" />
+				
+			
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_sprayinginstalla_se">
+			<source_table>ylswxt</source_table>
+			<target_table>p_ship_sprayinginstalla_se</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="cabin_item" source="bhcs" />
+				<column target="pump_dis" source="bpl" />
+				<column target="pump_press" source="gzyl" />
+				<column target="spray_nozzle_num" source="pzsl" />
+				<column target="spray_nozzle_mod" source="pzxs" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_special_req_other">
+			<source_table>tscbqt</source_table>
+			<target_table>p_ship_special_req_other</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="other" source="bz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_special_req_fireboat">
+			<source_table>xfc</source_table>
+			<target_table>p_ship_special_req_fireboat</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="fireboat_type" source="zl" ></column>
+				<column target="fireboat_self_protect" source="zwbhss" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_personal_save_life">
+			<source_table>grjssbpb</source_table>
+			<target_table>p_ship_personal_save_life</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="xm" ></column>
+				<column target="num" source="sl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+
+		<task id="ship_fire_move_tools">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_fire_move_tools</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" key="true" ></column>
+				<column target="move_tools_num1" source="stspmq" ></column>
+				<column target="move_tools_num2" source="tpf" ></column>
+				<column target="move_tools_num3" source="tpt" ></column>
+			</columns>
+			
+
+
+			
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		
+		
+		
+		<task id="ship_inert_gas_from">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_inert_gas_from</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="flue" source="dxglpl"  />
+					<column target="generator" source="dxqtfsq"  />
+					<column target="other" source="dxqtqt"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_ladder">
+			<source_table>rtxt</source_table>
+			<target_table>p_ship_ladder</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item" source="mc"  />						
+												
+					<column target="meta" source="cl"  />						
+												
+					<column target="meta_en" source="cl"  />						
+												
+					<column target="mod" source="txh"  />						
+												
+					<column target="num" source="sl"  />						
+												
+					<column target="pos" source="wz"  />						
+												
+					<column target="pos_en" source="wz"  />						
+												
+					<column target="maker" source="zzc"  />						
+												
+					<column target="maker_en" source="zzc"  />						
+												
+					<column target="cetno" source="cjzsbh"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_lifeboat">
+			<source_table>jst</source_table>
+			<target_table>p_ship_lifeboat</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="form" source="jsfxs"  />						
+					<column target="form_en" source="jsfxs"  />						
+					<column target="pos" source="wz"  />						
+					<column target="pos_en" source="wz"  />						
+					<column target="num" source="sl"  />						
+					<column target="machine" source="jdfjd"  />						
+					<column target="capacity" source="dy"  />						
+					<column target="pow" source="tjgl"  />						
+					<column target="peed" source="hs"  />
+					<column target="maker" source="zzs"  />						
+					<column target="maker_en" source="zzs"  />						
+					<column target="cetno" source="cjzsbh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_lifeboat_down">
+			<source_table>jst</source_table>
+			<target_table>p_ship_lifeboat_down</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="form" source="tjlxs"  />						
+					<column target="form_en" source="tjlxs"  />						
+					<column target="save_work_load" source="edfh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_liferaft">
+			<source_table>jsf</source_table>
+			<target_table>p_ship_liferaft</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="form" source="jsfxs"  />						
+					<column target="form_en" source="jsfxs"  />						
+					<column target="pos" source="wz"  />						
+					<column target="pos_en" source="wz"  />						
+					<column target="capacity" source="dy"  />						
+					<column target="num" source="sl"  />						
+					<column target="maker" source="zzc"  />						
+					<column target="maker_en" source="zzc"  />						
+					<column target="cetno" source="cjzsbh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_liferaft_down">
+			<source_table>jlzz</source_table>
+			<target_table>p_ship_liferaft_down</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="que_mod" source="xh"  />
+					<column target="que_save_work_load" source="aqgzfh"  />
+					<column target="que_maker" source="zzc"  />						
+					<column target="que_maker_en" source="zzc"  />						
+					<column target="que_cetno" source="cjzsbh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_liquid_pipe_oil">
+			<source_table>hygx</source_table>
+			<target_table>p_ship_liquid_pipe_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="pipe_name" source="gxmc"  />						
+												
+					<column target="dia" source="glzj"  />						
+												
+					<column target="thickness" source="glhd"  />						
+												
+					<column target="joint_type_en" source="pzjxs"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_mooringw">
+			<source_table>jlj</source_table>
+			<target_table>p_ship_mooringw</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="jljmc"  />						
+					<column target="pos" source="jljwz"  />						
+					<column target="typ" source="jljxs"  />						
+					<column target="mod" source="jljxh"  />						
+					<column target="pow" source="jljgl"  />						
+					<column target="maker" source="zzc"  />						
+					<column target="pno" source="cpbh"  />						
+					<column target="certno" source="cjzsbh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_nox">
+			<source_table>fzkqcyj</source_table>
+			<target_table>p_ship_nox</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="ship_nox_use" source="v_yt"  />						
+												
+					<column target="mod" source="v_xh"  />						
+												
+					<column target="pos" source="v_wz"  />						
+												
+					<column target="pow" source="n_edgl"  />						
+												
+					<column target="speed" source="i_edzs"  />						
+												
+					<column target="filt" source="v_sfazlqq"  />						
+												
+					<column target="capacity" source="n_nopfl"  />						
+												
+					<column target="ship_nox_no" source="v_jh"  />						
+												
+					<column target="certno" source="v_cjzsbh"  />						
+												
+					<column target="make_date" source="d_zzrq"  />						
+												
+					<column target="maker" source="v_cyjzzc"  />						
+												
+					<column target="certno_international" source="v_wrzsbh"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_onfire">
+			<source_table>fsl</source_table>
+			<target_table>p_ship_onfire</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="kind" source="v_lx"  />						
+												
+					<column target="mod" source="v_xh"  />						
+												
+					<column target="pow" source="n_gl"  />						
+												
+					<column target="pos" source="v_azwz"  />						
+												
+					<column target="ship_onfire_no" source="v_bh"  />						
+												
+					<column target="certno" source="v_rkbh"  />						
+												
+					<column target="make_date" source="d_zzrq"  />						
+												
+					<column target="maker" source="v_zzc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_ozone">
+			<source_table>hcfcs</source_table>
+			<target_table>p_ship_ozone</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="num" source="i_sl"  />						
+												
+					<column target="pos" source="v_wz"  />						
+												
+					<column target="item_name" source="v_sbmc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_part_size_material">
+			<source_table>zygjcc</source_table>
+			<target_table>p_ship_part_size_material</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="gjmc"  />						
+					<column target="material_size" source="hdcc"  />						
+					<column target="material_level" source="gcdj"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_passengers_info">
+			<source_table>ckdeqk</source_table>
+			<target_table>p_ship_passengers_info</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="mod" source="mc"  />						
+												
+					<column target="pos" source="wz"  />						
+												
+					<column target="num" source="rs"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_pollute_cargo">
+			<source_table>hfdwz</source_table>
+			<target_table>p_ship_pollute_cargo</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="ship_pollute_cargo_no" source="ch"  />						
+												
+					<column target="cargo" source="hpmc"  />						
+												
+					<column target="condition" source="zytj"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_pollute_equip">
+			<source_table>fzwrsb</source_table>
+			<target_table>p_ship_pollute_equip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="mc"  />						
+												
+					<column target="mod" source="xh"  />						
+												
+					<column target="num" source="sl"  />						
+												
+					<column target="maker" source="zzc"  />						
+												
+					<column target="certno" source="zsbh"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_propulsion">
+			<source_table>tjq</source_table>
+			<target_table>p_ship_propulsion</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="meta" source="cl"  />						
+												
+					<column target="dia" source="zj"  />						
+												
+					<column target="pno" source="cpbh"  />						
+												
+					<column target="certno" source="cjzsbh"  />						
+												
+					<column target="make_date" source="zzrq"  />						
+												
+					<column target="maker" source="zzc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+
+		<task id="ship_pumps_boiler">
+			<source_table>bjgx</source_table>
+			<target_table>p_ship_pumps_boiler</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="mc"  />						
+					<column target="mod" source="xh"  />						
+					<column target="num" source="sl"  />						
+					<column target="vol" source="pl"  />						
+					<column target="work_press" source="gzyl"  />						
+					<column target="prime_mover_typ" source="ydjxs"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_pumps_cold">
+			<source_table>bjgx</source_table>
+			<target_table>p_ship_pumps_cold</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="mc"  />						
+					<column target="mod" source="xh"  />						
+					<column target="num" source="sl"  />						
+					<column target="capacity" source="pl"  />						
+					<column target="pressure" source="gzyl"  />						
+					<column target="driven_by" source="ydjxs"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_pump_oil">
+			<source_table>hysb</source_table>
+			<target_table>p_ship_pump_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="equip_name" source="sbcm"  />						
+					<column target="pump_type" source="bxh"  />						
+					<column target="pump_num" source="xsl"  />						
+					<column target="pump_capa" source="ppl"  />						
+					<column target="pump_press" source="pgzyl"  />						
+					<column target="pump_location" source="pazwz"  />						
+					<column target="primer_form" source="ydjxs"  />						
+					<column target="primer_type" source="ydjxh"  />						
+					<column target="primer_pow" source="ydjgl"  />						
+					<column target="primer_speed" source="ydjzs"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_river_load_cargo">
+			<source_table>zzx</source_table>
+			<target_table>p_ship_river_load_cargo</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="area" source="mc"  />						
+												
+					<column target="load_cargo" source="zhl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_room_funwork">
+			<source_table>qtcs</source_table>
+			<target_table>p_ship_room_funwork</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="v_csmc"  />						
+												
+					<column target="pos" source="v_wz"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_room_other">
+			<source_table>qtcs</source_table>
+			<target_table>p_ship_room_other</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="v_csmc"  />						
+												
+					<column target="pos" source="v_wz"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_roro_door1">
+			<source_table>ckdc</source_table>
+			<target_table>p_ship_roro_door</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="door_size" source="smcc"  />
+					<column target="clr_size" source="smjkkcc"  />
+					<column target="open_close_type" source="smqbfs"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_roro_door2">
+			<source_table>ckdc</source_table>
+			<target_table>p_ship_roro_door</target_table>
+			<import_type>INSERT</import_type>
+			<clear>false</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="door_size" source="wmcc"  />
+					<column target="clr_size" source="wmjkkcc"  />
+					<column target="open_close_type" source="wmqbfs"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_roro_equip">
+			<source_table>gzcsb</source_table>
+			<target_table>p_ship_roro_equip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="equip_name" source="sbmc"  />						
+												
+					<column target="equip_type" source="xh"  />						
+												
+					<column target="cert_no" source="zsbh"  />						
+												
+					<column target="manuf" source="zzc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_roro_lift_platform">
+			<source_table>ckdc</source_table>
+			<target_table>p_ship_roro_lift_platform</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="platform_size" source="sjcc"  />						
+												
+					<column target="platform_load" source="sjzh"  />						
+												
+					<column target="platform_power_src" source="sjzl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_rud">
+			<source_table>dqk</source_table>
+			<target_table>p_ship_rud</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item" source="dmc"  />						
+												
+					<column target="typ" source="dlx"  />						
+												
+					<column target="num" source="dsl"  />						
+												
+					<column target="support_mod" source="zcxs"  />						
+												
+					<column target="area" source="dmj"  />						
+												
+					<column target="meta" source="dgcl"  />						
+												
+					<column target="rudder_dia" source="dgzj"  />						
+												
+					<column target="shaft_dia" source="dzzj"  />						
+												
+					<column target="pintle_dia" source="dxzj"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_sailequip">
+			<source_table>hxsb</source_table>
+			<target_table>p_ship_sailequip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="mc"  />						
+												
+					<column target="num" source="sl"  />						
+												
+					<column target="mod" source="xh"  />						
+												
+					<column target="maker" source="zzc"  />						
+												
+					<column target="certno" source="zsbh"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_save">
+			<source_table>qt2</source_table>
+			<target_table>p_ship_save</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="typ" source="xh"  />						
+												
+					<column target="serial_no" source="jh"  />						
+												
+					<column target="work_kind" source="gzzl"  />						
+												
+					<column target="frequency_receive" source="jspl"  />						
+												
+					<column target="send_type" source="fslb"  />						
+												
+					<column target="frequency_work" source="gzpl"  />						
+												
+					<column target="power" source="fsgl"  />						
+												
+					<column target="maker" source="zzc"  />						
+												
+					<column target="certno" source="zsbh"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_shaft">
+			<source_table>tjq</source_table>
+			<target_table>p_ship_shaft</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="typ" source="lx"  />						
+												
+					<column target="pno" source="cpbh"  />						
+												
+					<column target="certno" source="cjzsbh"  />						
+												
+					<column target="make_date" source="zzrq"  />						
+												
+					<column target="maker" source="zzc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_sign_flashlight">
+			<source_table>sgdpb</source_table>
+			<target_table>p_ship_sign_flashlight</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="xm"  />						
+												
+					<column target="distance" source="jl"  />						
+												
+					<column target="num" source="sl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_sign_type">
+			<source_table>hxpb</source_table>
+			<target_table>p_ship_sign_type</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item_name" source="xm"  />						
+												
+					<column target="num" source="sl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_slow">
+			<source_table>clx</source_table>
+			<target_table>p_ship_slow</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="mod" source="xh"  />						
+												
+					<column target="num" source="sl"  />						
+												
+					<column target="ratio" source="jsb"  />						
+												
+					<column target="speed" source="edsrzs"  />						
+												
+					<column target="trans" source="edcdnl"  />						
+												
+					<column target="pno" source="cpbh"  />						
+												
+					<column target="certno" source="cjzsbh"  />						
+												
+					<column target="make_date" source="zzrq"  />						
+												
+					<column target="maker" source="zzc"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_special_add_req_oil">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_special_add_req_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="oil_flash_point" source="hpsd"  />						
+					<column target="oil_cargo_type" source="hpzl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_special_add_req_tug">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_special_add_req_tug</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="tug_pull" source="tcxztl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_special_equip">
+			<source_table>tzjx</source_table>
+			<target_table>p_ship_special_equip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="data" source="jssj"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_sprinkler">
+			<source_table>zdplxt</source_table>
+			<target_table>p_ship_sprinkler</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+										
+					<column target="item" source="bhcs"  />						
+												
+					<column target="item_en" source="bhcs"  />						
+												
+					<column target="typ" source="dlblx"  />						
+												
+					<column target="dis" source="dlbpl"  />						
+												
+					<column target="press" source="dlbyl"  />						
+												
+					<column target="ins_pos" source="dlbazwz"  />						
+												
+					<column target="ins_pos_en" source="dlbazwz"  />						
+												
+					<column target="sys_press" source="xtyl"  />						
+												
+					<column target="pos" source="jzfwz"  />						
+												
+					<column target="pos_en" source="jzfwz"  />						
+												
+					<column target="sprinkler_head_typ" source="ptlx"  />						
+												
+					<column target="sprinkler_head_num" source="ptsl"  />						
+												
+					<column target="sprinkler_head_tem" source="ptgzwd"  />						
+												
+					<column target="sprinkler_head_maker" source="ptzzc"  />						
+												
+					<column target="sprinkler_head_maker_en" source="ptzzc"  />						
+												
+					<column target="sprinkler_head_pno" source="ptcjzsbh"  />						
+												
+					<column target="sprinkler_head_spare_num" source="ptbpsl"  />						
+						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_steering">
+			<source_table>djqk</source_table>
+			<target_table>p_ship_steering</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="djmc"  />						
+					<column target="typ" source="djxs"  />						
+					<column target="pow" source="djgl"  />						
+					<column target="torque" source="djnj"  />						
+					<column target="power_typ" source="dyzl"  />						
+					<column target="pre" source="gzyl"  />						
+					<column target="maker" source="djzzc"  />						
+					<column target="certno" source="cpzsbh"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_stern_tube">
+			<source_table>wzgqk</source_table>
+			<target_table>p_ship_stern_tube</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="struc_form" source="jgxs"  />						
+					<column target="mat" source="cl"  />						
+					<column target="certno" source="cjzsbh"  />						
+					<column target="maker" source="zzc"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_switchboard_emer">
+			<source_table>zpdb</source_table>
+			<target_table>p_ship_switchboard_emer</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="s_no" source="xs"  />						
+					<column target="panel_num" source="ps"  />						
+					<column target="voltage" source="dydj"  />						
+					<column target="current_type" source="dlzl"  />						
+					<column target="cert_no" source="zsbh"  />						
+					<column target="pos" source="afwz"  />						
+					<column target="manu_date" source="zzrq"  />						
+					<column target="manuf" source="zzc"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_tail_bearing">
+			<source_table>wzcqk</source_table>
+			<target_table>p_ship_tail_bearing</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="item" source="wz"  />						
+					<column target="mat" source="zccl"  />						
+					<column target="struc_form" source="mfjgxs"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_tank_ballast">
+			<source_table>ycfwr</source_table>
+			<target_table>p_ship_tank_ballast</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="room" source="cm"  />						
+					<column target="volume" source="rj"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_tank_clear">
+			<source_table>ycfwr</source_table>
+			<target_table>p_ship_tank_clear</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="room" source="cm"  />						
+					<column target="volume" source="rj"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		
+		<task id="ship_tank_oil1">
+			<source_table>jqcsfwr</source_table>
+			<target_table>p_ship_tank_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="room" source="cyccm"  />						
+					<column target="pos" source="wz"  />						
+					<column target="volume" source="rj"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_tank_oil2">
+			<source_table>jqcsfwr</source_table>
+			<target_table>p_ship_tank_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>false</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="room" source="cyccm2"  />						
+					<column target="pos" source="wz2"  />						
+					<column target="volume" source="rj2"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_tank_oil3">
+			<source_table>jqcsfwr</source_table>
+			<target_table>p_ship_tank_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>false</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />				
+					<column target="room" source="cyccm3"  />						
+					<column target="pos" source="wz3"  />						
+					<column target="volume" source="rj3"  />						
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_throw_line">
+			<source_table>pssb</source_table>
+			<target_table>p_ship_throw_line</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="pssbxs" target="form" />
+				<column source="sl" target="num" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_tightness">
+			<source_table>kksbmc</source_table>
+			<target_table>p_ship_tightness</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="xm" target="item" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_tug_equip">
+			<source_table>tcqzc</source_table>
+			<target_table>p_ship_tug_equip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />			 
+
+				<column source="sbmc" target="equip_name" />
+				<column source="xh" target="equip_type" />
+				<column source="aqgzfh" target="safety_load" />
+				<column source="zzc" target="manuf" />
+				<column source="zsbh" target="cert_no" />
+ 
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_tug_towline">
+			<source_table>tlqk</source_table>
+			<target_table>p_ship_tug_towline</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />				 
+		
+				<column source="mc" target="material" />
+				<column source="sl" target="line_num" />
+				<column source="zj" target="dia" />
+				<column source="cd" target="length" />
+				<column source="pdfh" target="break_load" />
+				<column source="cjzsbh" target="cert_no" />
+
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_valve">
+			<source_table>fzjscs</source_table>
+			<target_table>p_ship_valve</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />				 
+				<column source="mc" target="item_name" />
+				<column source="wz" target="pos" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_water">
+			<source_table>yysds</source_table>
+			<target_table>p_ship_water</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />			
+				<column source="v_mc" target="item_name" />
+				<column source="v_wz" target="pos" />
+				<column source="n_mj" target="volume" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_wind">
+			<source_table>mjqk</source_table>
+			<target_table>p_ship_wind</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />				 
+				<column source="mjmc" target="item" />
+				<column source="mjxs" target="typ" />
+				<column source="mjxh" target="mod" />
+				<column source="mjgl" target="pow" />
+				<column source="mjzzc" target="maker" />
+				<column source="cpbh" target="pno" />
+				<column source="cjzsbh" target="certno" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_wireless_mark">
+			<source_table>qt2</source_table>
+			<target_table>p_ship_wireless_mark</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="xh" target="mod" />
+				<column source="jh" target="serial_no" />
+				<column source="gzzl" target="work_kind" />
+				<column source="jspl" target="frequency_receive" />
+				<column source="fslb" target="send_type" />
+				<column source="gzpl" target="frequency_work" />
+				<column source="fsgl" target="pow" />
+				<column source="zzc" target="maker" />
+				<column source="zsbh" target="certno" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_wireless_other">
+			<source_table>qt2</source_table>
+			<target_table>p_ship_wireless_other</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="mc" target="item_name" />
+				<column source="xh" target="mod" />
+				<column source="jh" target="serial_no" />
+				<column source="gzzl" target="work_kind" />
+				<column source="jspl" target="frequency_receive" />
+				<column source="fslb" target="send_type" />
+				<column source="gzpl" target="frequency_work" />
+				<column source="fsgl" target="pow" />
+				<column source="zzc" target="maker" />
+				<column source="zsbh" target="certno" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<task id="ship_freeboard">
+			<source_table>hczzx</source_table>
+			<target_table>p_ship_freeboard</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />			
+					<column target="load_line01" source="rdgx"  />			
+					<column target="load_line02" source="xjgx"  />			
+					<column target="load_line03" source="rdgyxj"  />
+					<column target="load_line04" source="rdmcgx"  />
+					<column target="load_line05" source="xjmcgx"  />		
+					<column target="load_line06" source="rdmcgymc"  />
+					<column target="load_line07" source="mcgyxj"  />
+					<column target="load_line08" source="gxdskxxj"  />	
+					<column target="load_line09" source="gxdskxrd"  />
+					<column target="load_line10" source="mcgxdskxxj"  />
+					<column target="load_line11" source="mcgxdskxrd"  />
+					<column target="load_line12" source="jljbmc"  />
+					<column target="load_line13" source="jbxzjl"  />
+					<column target="load_line14" source="kcfcgxc1"  />
+					<column target="load_line15" source="kcfcgxc2"  />
+					<column target="load_line16" source="kcfcgxc3"  />
+					<column target="c1_type" source="c1fl"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_freeboard_river">
+			<source_table>zzxbc</source_table>
+			<target_table>p_ship_freeboard_river</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />		
+					<column target="a" source="a"  />	
+					<column target="b" source="b"  />	
+					<column target="c" source="c"  />
+					<column target="j1" source="j1"  />					
+					<column target="j2" source="j2"  />	
+					<column target="a_add" source="fa"  />	
+					<column target="b_add" source="fb"  />
+					<column target="c_add" source="fc"  />			
+					<column target="j1_add" source="fj1"  />
+					<column target="j2_add" source="fj2"  />	
+					<column target="pos1" source="wz1"  />				
+					<column target="pos2" source="wz2"  />		
+					<column target="pos3" source="wz3"  />	
+					<column target="pos4" source="wz4"  />
+					<column target="pos5" source="wz5"  />
+					<column target="pos6" source="wz6"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_gasmeasurement">
+			<source_table>ybzz</source_table>
+			<target_table>p_ship_gasmeasurement</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="item" source="mc"  />				
+					<column target="item_en" source="mc"  />							
+					<column target="typ" source="xh"  />			
+					<column target="num" source="sl"  />
+					<column target="maker" source="zzc"  />	
+					<column target="maker_en" source="zzc"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_gas_tank">
+			<source_table>yhccs</source_table>
+			<target_table>p_ship_gas_tank</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="tank_type" source="ycxs"  />		
+					<column target="tank_no" source="bh"  />
+					<column target="stress_f1" source="ylcsa"  />
+					<column target="stress_f2" source="ylcsb"  />
+					<column target="stress_f3" source="ylcsc"  />	
+					<column target="stress_f4" source="ylcsd"  />
+					<column target="tank_material" source="cl"  />		
+					<column target="t_marvs" source="tzyl"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_gas_tank2">
+			<source_table>zsybc</source_table>
+			<target_table>p_ship_gas_tank2</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="stress_f1" source="yhgxa"  />	
+					<column target="stress_f2" source="yhgxb"  />
+					<column target="stress_f3" source="yhgxc"  />
+					<column target="stress_f4" source="yhgxd"  />
+					<column target="tank_material" source="yhgxcl"  />
+					<column target="t_marvs" source="yhgxyl"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_gen">
+			<source_table>fdjqk</source_table>
+			<target_table>p_ship_gen</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="gen_mod" source="fdjxh"  />
+					<column target="gen_num" source="fdjsl"  />
+					<column target="gen_pno" source="fdjcpbh"  />
+					<column target="gen_pow" source="fdjgl"  />
+					<column target="gen_speed" source="fdjzs"  />
+					<column target="gen_voltage" source="dy"  />
+					<column target="gen_current" source="dl"  />
+					<column target="gen_current_type" source="dlzl"  />
+					<column target="gen_freq" source="fdjpl"  />
+					<column target="gen_factor" source="fdjglis"  />
+					<column target="gen_maker" source="fdjzzc"  />	
+					<column target="gen_make_date" source="fdjzzrq"  />
+					<column target="gen_certno" source="fdjzsbh"  />
+					<column target="primer_mod" source="ydjxh"  />
+					<column target="primer_kop" source="ydjxs"  />
+					<column target="primer_num" source="ydjsl"  />
+					<column target="primer_pno" source="ydjcpbh"  />
+					<column target="primer_pow" source="ydjgl"  />
+					<column target="primer_speed" source="ydjzs"  />
+					<column target="primer_startmode" source="ydjqdfs"  />
+					<column target="primer_maker" source="ydjzzc"  />
+					<column target="primer_make_date" source="ydjzzrq"  />
+					<column target="primer_certno" source="ydjzsbh"  />
+					<column target="primer_pos" source="ydjafwz"  />
+					<column target="primer_mes" source="ydjcdff"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_hold">
+			<source_table>cdsxt</source_table>
+			<target_table>p_ship_hold</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />			
+					<column target="item" source="ch"  />			
+					<column target="dia" source="glzj"  />			
+					<column target="num" source="xksl"  />
+					<column target="pos" source="xkwz"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_inclining">
+			<source_table>qxsy</source_table>
+			<target_table>p_ship_inclining</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="ship_inclining_date" source="syrq"  />
+					<column target="place" source="sydd"  />
+					<column target="reason" source="msyyy"  />
+					<column target="height" source="gd"  />
+					<column target="longitudinal" source="wz"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_inert_gas">
+			<source_table>dxqtzz</source_table>
+			<target_table>p_ship_inert_gas</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />	
+					<column target="item" source="mc"  />	
+					<column target="item_en" source="mc"  />
+					<column target="mod" source="xh"  />
+					<column target="num" source="sl"  />
+					<column target="ins_pos" source="azwz"  />
+					<column target="ins_pos_en" source="azwz"  />
+					<column target="dis" source="pfl"  />
+					<column target="tem" source="ckwd"  />
+					<column target="maker" source="zzc"  />	
+					<column target="maker_en" source="zzc"  />
+					<column target="make_date" source="zzrq"  />
+					<column target="pno" source="cpbh"  />
+					<column target="cetno" source="cjzsbh"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+
+		<task id="ship_inert_gas_attach">
+			<source_table>dqfszz</source_table>
+			<target_table>p_ship_inert_gas_attach</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+					<column target="rid" generator="uuid" primarykey="true" />
+					<column target="cjdjh" source="cjdjh" mark="true" />
+					<column target="item" source="mc"  />	
+					<column target="item_en" source="mc"  />
+					<column target="mod" source="xh"  />
+					<column target="num" source="sl"  />
+					<column target="dis" source="pl"  />
+					<column target="press" source="gzyl"  />
+					<column target="typ" source="ydjxh"  />
+					<column target="pow" source="ydjgl"  />
+					<column target="turn_speed" source="ydjzs"  />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		<task id="ship_floor">
+			<source_table>cbdmz</source_table>
+			<target_table>p_ship_floor</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="xh" ></column>
+				<column target="standard" source="czbz" ></column>
+				<column target="frequency_out" source="fspl" ></column>
+				<column target="frequency_in" source="jspl" ></column>
+				<column target="serial_no" source="jh" ></column>
+				<column target="certno" source="zsbh" ></column>
+				<column target="maker" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_float_equip">
+			<source_table>fqwsb</source_table>
+			<target_table>p_ship_float_equip</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="equip_name" source="sbmc" ></column>
+				<column target="equip_type" source="xh" ></column>
+				<column target="cert_no" source="zsbh" ></column>
+				<column target="manuf" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_fixed_ballast">
+			<source_table>gdyz</source_table>
+			<target_table>p_ship_fixed_ballast</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="ballast_num" source="sl" ></column>
+				<column target="ballast_pos" source="wz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_fire_move">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_fire_move</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="pic_pos" source="fhtwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_firepumps">
+			<source_table>smhxt</source_table>
+			<target_table>p_ship_firepumps</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="xfbxs" ></column>
+				<column target="mod" source="xfbxh" ></column>
+				<column target="num" source="xfbsl" ></column>
+				<column target="work_press" source="xfbyt" ></column>
+				<column target="r_speed" source="zs" ></column>
+				<column target="displacement" source="xfbpl" ></column>
+				<column target="ins_pos" source="xfbazwz" ></column>
+				<column target="control_pos" source="ykqdwz" ></column>
+				<column target="prime_mover_typ" source="ydjxs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_firepump">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_firepump</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="firepump_dia" source="xfzgzj" ></column>
+				<column target="isolation_pos" source="glfwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_fireproof">
+			<source_table>xfcs</source_table>
+			<target_table>p_ship_fireproof</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="pos" source="wz" ></column>
+				<column target="detector_tupe" source="tcqxs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_fireextinguishers">
+			<source_table>ydmhqj</source_table>
+			<target_table>p_ship_fireextinguishers</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="zl" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="mod" source="gg" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="cetno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_fired">
+			<source_table>nhcl</source_table>
+			<target_table>p_ship_fired</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="meta_typ" source="clzl" ></column>
+				<column target="lev" source="nhdj" ></column>
+				<column target="maker" source="zzc" ></column>
+			
+				<column target="cetno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_file">
+			<source_table>cbwjzl</source_table>
+			<target_table>p_ship_file</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="zlmc" ></column>
+				<column target="draw_no" source="tzh" ></column>
+				<column target="approval_no" source="pzh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_fan">
+			<source_table>bjfj</source_table>
+			<target_table>p_ship_fan</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item_name" source="mc" ></column>
+				<column target="fan_type" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="cap" source="pl" ></column>
+				<column target="pre" source="gzyl" ></column>
+				<column target="speed" source="ydzs" ></column>
+				<column target="db" source="ydxh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_exchange_oil">
+			<source_table>rjhqfyj</source_table>
+			<target_table>p_ship_exchange_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="typ" source="xs" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="surface" source="rjhmj" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_exchange_cold">
+			<source_table>rjhqfyj</source_table>
+			<target_table>p_ship_exchange_cold</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="typ" source="xs" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="surface" source="rjhmj" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_exchange_boiler">
+			<source_table>rjhqfyj</source_table>
+			<target_table>p_ship_exchange_boiler</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="typ" source="xs" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="turn_area" source="rjhmj" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_elec_push">
+			<source_table>zfjqk</source_table>
+			<target_table>p_ship_elec_push</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="push_typ" source="lx" ></column>
+				<column target="push_mod" source="xh" ></column>
+				<column target="push_num" source="sl" ></column>
+				<column target="push_pno" source="jh" ></column>
+				<column target="push_pow" source="edgl" ></column>
+				<column target="push_speed" source="edzs" ></column>
+				<column target="push_maker" source="zzc" ></column>
+				<column target="push_make_date" source="zzrq" ></column>
+				<column target="push_certno" source="cjzsbh" ></column>
+				<column target="push_pos" source="wz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_detector">
+			<source_table>thq</source_table>
+			<target_table>p_ship_detector</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="alarm_typ" source="bjfs" ></column>
+				<column target="control_pos" source="kzbwz" ></column>
+				<column target="control_pos_en" source="kzbwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_deckfoamsystem">
+			<source_table>gdpmmh</source_table>
+			<target_table>p_ship_deckfoamsystem</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="num" source="pbzzl" ></column>
+				<column target="annon_num" source="pmpsl" ></column>
+				<column target="gun_num" source="pmqsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_controlpanels">
+			<source_table>thq</source_table>
+			<target_table>p_ship_controlpanels</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="thqmc" ></column>
+				<column target="item_en" source="thqmc" ></column>
+				<column target="ins_pos" source="thqwz" ></column>
+				<column target="ins_pos_en" source="thqwz" ></column>
+				<column target="typ" source="thqxs" ></column>
+				<column target="typ_en" source="thqxs" ></column>
+				<column target="mod" source="xh" ></column>
+				<column target="num" source="thqsl" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="maker_en" source="zzc" ></column>
+				<column target="cetno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_condenser">
+			<source_table>rjhqcyq</source_table>
+			<target_table>p_ship_condenser</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item_name" source="mc" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="area" source="rjhmj" ></column>
+				<column target="capacity" source="rl" ></column>
+				<column target="tp" source="sysyyl" ></column>
+				<column target="cert_no" source="zsbh" ></column>
+				<column target="manu_date" source="zzrq" ></column>
+				<column target="manuf" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_compressor">
+			<source_table>zljz</source_table>
+			<target_table>p_ship_compressor</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="compressor_type" source="ysxh" ></column>
+				<column target="compressor_num" source="yssl" ></column>
+				<column target="compressor_capa" source="yszll" ></column>
+				<column target="compressor_press" source="ysgzyl" ></column>
+				<column target="compressor_s_no" source="yscpbh" ></column>
+				<column target="compressor_cert_no" source="yszsbh" ></column>
+				<column target="compressor_speed" source="ysedzs" ></column>
+				<column target="compressor_manu_date" source="yszzrq" ></column>
+				<column target="compressor_manuf" source="yszzc" ></column>
+				<column target="primer_form" source="ydxs" ></column>
+				<column target="primer_type" source="ydxh" ></column>
+				<column target="primer_pow" source="ydgl" ></column>
+				<column target="primer_speed" source="ydzs" ></column>
+				<column target="primer_s_no" source="ydcpbh" ></column>
+				<column target="primer_cert_no" source="ydzsbh" ></column>
+				<column target="primer_manuf" source="ydzzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_cmsainfo">
+			<source_table>cbsbhjy</source_table>
+			<target_table>p_ship_cmsainfo</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="pos" source="v_cbsbhwz" ></column>
+				<column target="var_size" source="v_sbhzf" ></column>
+				<column target="var_mode" source="v_sbhfs" ></column>
+				<column target="label_pos" source="v_dzbqwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_chainblock_parts">
+			<source_table>qzsbhdlj</source_table>
+			<target_table>p_ship_chainblock_parts</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="parts_no" source="bjbh" ></column>
+				<column target="item_name" source="mchgg" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="test_date" source="syrq" ></column>
+				<column target="test_burthen" source="syfh" ></column>
+				<column target="work_burthen" source="aqgzfh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_chainblock_info">
+			<source_table>qzsb</source_table>
+			<target_table>p_ship_chainblock_info</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item_name" source="mcjwz" ></column>
+				<column target="pos" source="mcjwz" ></column>
+				<column target="work_burthen" source="aqgzfh" ></column>
+				<column target="test_burthen" source="syfh" ></column>
+				<column target="arm_degree" source="jjjfd" ></column>
+				<column target="elevation" source="jjjfd" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_chainblock">
+			<source_table>qzbc</source_table>
+			<target_table>p_ship_chainblock</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<custom_sql>select jy.jybh as jybh,jy.jyrq as jyrq ,jy.cjdjh as cjdjh,t.qzsbzl as qzsbzl,t.qzsbsl as qzsbsl,t.zdgzfh as zdgzfh from qzbc t left join jyqk jy on t.jybh = jy.jybh and jy.jyrq=(select max(jy1.jyrq) from jyqk jy1 where jy1.cjdjh = jy.cjdjh and exists(select t2.jybh from qzbc t2 where t2.jybh = jy.jybh ) ) where jy.cjdjh is not null  order by jy.cjdjh</custom_sql>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="kind" source="qzsbzl" ></column>
+				<column target="num" source="qzsbsl" ></column>
+				<column target="burthen" source="zdgzfh" ></column>
+			</columns>
+			<where>
+				
+			</where>
+		</task>
+		<task id="ship_chain">
+			<source_table>mlqk</source_table>
+			<target_table>p_ship_chain</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mlmc" ></column>
+				<column target="typ" source="mlxs" ></column>
+				<column target="dia" source="mlzj" ></column>
+				<column target="leng" source="mlcd" ></column>
+				<column target="meta" source="mlcl" ></column>
+				<column target="grade" source="mldj" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_cast">
+			<source_table>ctzdj</source_table>
+			<target_table>p_ship_cast</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="meta" source="cz" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="certno" source="cjzxbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_cargo_listspa">
+			<source_table>lcc</source_table>
+			<target_table>p_ship_cargo_listspa</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="cargoco" source="ch" ></column>
+				<column target="capacity" source="rj" ></column>
+				<column target="design_temp" source="sjwd" ></column>
+				<column target="measure_point" source="csdsl" ></column>
+				<column target="insu_mat" source="jycl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_cargo_list">
+			<source_table>hfdwz</source_table>
+			<target_table>p_ship_cargo_list</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="tank_no" source="ch" ></column>
+				<column target="cargo" source="hpmc" ></column>
+				<column target="min_temp" source="zdwd" ></column>
+				<column target="max_pressure" source="zdyl" ></column>
+				<column target="max_density" source="zdmd" ></column>
+				<column target="load_condition" source="zytj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_cargo_detect_control">
+			<source_table>yhctckz</source_table>
+			<target_table>p_ship_cargo_detect_control</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="device_name" source="sbmc" ></column>
+				<column target="device_type" source="xh" ></column>
+				<column target="cert_no" source="zsbh" ></column>
+				<column target="manuf" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_buoyant">
+			<source_table>jsfj</source_table>
+			<target_table>p_ship_buoyant</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="form" source="jsfjxs" ></column>
+				<column target="form_en" source="jsfjxs" ></column>
+				<column target="capacity" source="dy" ></column>
+				<column target="num" source="sl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_breath_fac">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_breath_fac</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="vol" source="hxqrj" ></column>
+				<column target="press" source="hxqyl" ></column>
+				<column target="spare_num" source="hxqbypsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_breaker_emer">
+			<source_table>zpdb</source_table>
+			<target_table>p_ship_breaker_emer</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="breaker_type" source="dlqxh" ></column>
+				<column target="break_current" source="dlqedrl" ></column>
+				<column target="breaker_num" source="dlqsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_breaker">
+			<source_table>zpdb</source_table>
+			<target_table>p_ship_breaker</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="breaker_mod" source="dlqxh" ></column>
+				<column target="breaker_current" source="dlqedrl" ></column>
+				<column target="breaker_num" source="dlqsl" ></column>
+				<column target="capacity" source="jxfdrl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_branch_suction">
+			<source_table>cdsxt</source_table>
+			<target_table>p_ship_branch_suction</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="num" source="xksl" ></column>
+				<column target="dia" source="glzj" ></column>
+				<column target="pos" source="xkwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_boiler">
+			<source_table>glqk</source_table>
+			<target_table>p_ship_boiler</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="glmc" ></column>
+				<column target="typ" source="glxs" ></column>
+				<column target="num" source="glsl" ></column>
+				<column target="mod" source="glxh" ></column>
+				<column target="boiler_use" source="glyt" ></column>
+				<column target="ins_pos" source="azwz" ></column>
+				<column target="fuel_typ" source="rlzl" ></column>
+				<column target="design_press" source="sjyl" ></column>
+				<column target="work_press" source="gzyl" ></column>
+				<column target="evaporation" source="zfl" ></column>
+				<column target="fuel_area" source="srmj" ></column>
+				<column target="exhaust_area" source="srmj" ></column>
+				<column target="save_dia" source="aqfzj" ></column>
+				<column target="save_num" source="aqfsl" ></column>
+				<column target="pno" source="cpbh" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+				<column target="make_date" source="zzrq" ></column>
+				<column target="maker" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_bilge_pumps">
+			<source_table>bjgx</source_table>
+			<target_table>p_ship_bilge_pumps</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="mod" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="capacity" source="pl" ></column>
+				<column target="pressure" source="gzyl" ></column>
+				<column target="driven_by" source="ydjxs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_ballast_pumps">
+			<source_table>bjgx</source_table>
+			<target_table>p_ship_ballast_pumps</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item" source="mc" ></column>
+				<column target="mod" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="capacity" source="pl" ></column>
+				<column target="pressure" source="gzyl" ></column>
+				<column target="driven_by" source="ydjxs" ></column>
+				<column target="zjxh" source="zjxh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_axle_vibrate">
+			<source_table>zxzdbcb</source_table>
+			<target_table>p_ship_axle_vibrate</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="cal_1" source="zxnzzd" ></column>
+				<column target="cal_2" source="zxzxzd" ></column>
+				<column target="cal_3" source="zxhxzd" ></column>
+				<column target="non_measure_reason" source="yy" ></column>
+				<column target="measure_1" source="scndzd" ></column>
+				<column target="measure_2" source="sczxzd" ></column>
+				<column target="measure_3" source="schxzd" ></column>
+				<column target="twist_restrict_1" source="nzdj" ></column>
+				<column target="twist_restrict_2" source="nzsj" ></column>
+				<column target="twist_restrict_3" source="nzsanj" ></column>
+				<column target="long_restrict_0" source="zxlj" ></column>
+				<column target="long_restrict_1" source="zxyj" ></column>
+				<column target="turn_restrict" source="jq" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_axle">
+			<source_table>zx</source_table>
+			<target_table>p_ship_axle</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="s_type" source="mc" ></column>
+				<column target="s_num" source="sl" ></column>
+				<column target="spec_dia" source="jszj" ></column>
+				<column target="dia" source="zj" ></column>
+				<column target="material" source="cl" ></column>
+				<column target="connect_type" source="ljxs" ></column>
+				<column target="flanch_dia" source="flzj" ></column>
+				<column target="flanch_bolt_mat" source="fllscl" ></column>
+				<column target="cover_mat" source="ztclhk" ></column>
+				<column target="end_type" source="jcxs" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_antisepsis">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_antisepsis</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="ballast_water_tanks" source="yzscffcs" ></column>
+				<column target="outer_plate" source="wdffcs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_anch">
+			<source_table>mqk</source_table>
+			<target_table>p_ship_anch</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mmc" ></column>
+				<column target="typ" source="mxs" ></column>
+				<column target="pweight" source="mzl_sj" ></column>
+				<column target="aweight" source="mzl" ></column>
+				<column target="meta" source="mcl" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_air_bottle">
+			<source_table>kqp</source_table>
+			<target_table>p_ship_air_bottle</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="bottle_use" source="yt" ></column>
+				<column target="vol" source="rj" ></column>
+				<column target="design_press" source="sjyl" ></column>
+				<column target="work_press" source="gzyl" ></column>
+				<column target="exam_press" source="sysyyl" ></column>
+				<column target="ins_equ_typ" source="aqzzzl" ></column>
+				<column target="pno" source="cpbh" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+				<column target="make_date" source="zzrq" ></column>
+				<column target="maker" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_air_press">
+			<source_table>kyjqk</source_table>
+			<target_table>p_ship_air_press</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="kyjmc" ></column>
+				<column target="mod" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="vol" source="pl" ></column>
+				<column target="pno" source="cpbh" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="prime_mover_typ" source="ydjxs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<task id="ship_pumps_oil">
+			<source_table>bjgx</source_table>
+			<target_table>p_ship_pumps_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="mod" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="capacity" source="pl"></column>
+				<column target="pressure" source="gzyl"></column>
+				<column target="driven_by" source="ydjxs"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_pipe_oil">
+			<source_table>bqtxt</source_table>
+			<target_table>p_ship_pipe_oil</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="item" source="mc" ></column>
+				<column target="meta" source="cz" ></column>
+				<column target="pressure_design" source="sjyl" ></column>
+				<column target="pressure_test" source="syyl"></column>
+				<column target="zjxh" source="zjxh"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_switchboard">
+			<source_table>zpdb</source_table>
+			<target_table>p_ship_switchboard</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="xs" ></column>
+				<column target="certno" source="zsbh" ></column>
+				<column target="voltage" source="dydj" ></column>
+				<column target="make_date" source="zzrq"></column>
+				<column target="maker" source="zzc"></column>
+				<column target="pos" source="afwz"></column>
+				<column target="current_type" source="dlzl"></column>
+				<column target="panel_num" source="ps"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_hydrants">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_hydrants</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="hydrants_number" source="xfssl" ></column>
+				<column target="hydrants_d" source="xfszj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_hosesnozzles">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_hosesnozzles</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="num" source="xfsqsl" ></column>
+				<column target="len" source="xfsqkj" ></column>
+				<column target="dia" source="xfqxskj" ></column>
+				<column target="typ" source="gjtajtsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_fire_fightingother">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_fire_fightingother</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="num" source="gjtajtsl" ></column>
+				<column target="pos" source="gjtajtwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		<task id="ship_emergencycontrol">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_emergencycontrol</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true"></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="num" source="xfyzb" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_sign_lamp">
+			<source_table>hdpb</source_table>
+			<target_table>p_ship_sign_lamp</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item_name" source="xm" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="pos" source="wz" ></column>
+				<column target="number_1" source="dlsl" ></column>
+				<column target="number_2" source="dldsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_sign_flag">
+			<source_table>hqpb</source_table>
+			<target_table>p_ship_sign_flag</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item_name" source="xm" ></column>
+				<column target="spec" source="gg" ></column>
+				<column target="num" source="sl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_sign_sound">
+			<source_table>sxxhpb</source_table>
+			<target_table>p_ship_sign_sound</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item_name" source="xm" ></column>
+				<column target="spec" source="gg" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="pos" source="wz" ></column>
+				<column target="number_1" source="hdsl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_room_sleep">
+			<source_table>cyws</source_table>
+			<target_table>p_ship_room_sleep</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item_name" source="v_csmc" ></column>
+				<column target="num" source="i_sl" ></column>
+				<column target="area" source="n_mj" ></column>
+				<column target="height" source="n_zxcg" ></column>
+				<column target="pos" source="v_wz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_room_eat">
+			<source_table>qtcs</source_table>
+			<target_table>p_ship_room_eat</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="item_name" source="v_csmc" ></column>
+				<column target="area" source="n_mj" ></column>
+				<column target="pos" source="v_wz" ></column>
+				<column target="zjxh" source="zjxh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_steady1">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="describe" source="zzqk" ></column>
+				<column target="capacity" source="psl" ></column>
+				<column target="zg" source="zxczgd" ></column>
+				<column target="water_eat" source="pjcs" ></column>
+				<column target="gm" source="cwxgd" ></column>
+				<column target="l_max" source="zdjwxlb" ></column>
+				<column target="k4" source="jq" ></column>
+				<column target="ship1" source="xfp" ></column>
+				<column target="zjxh" source="zjxh" ></column>
+				
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_steady2">
+			<source_table>hcwxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="righting_arm_area" source="fylbmj" ></column>
+				<column target="righting_arm_angle" source="dyhqj" ></column>
+				<column target="righting_arm_max" source="zdfylbz" ></column>
+				<column target="k6" source="shhylb" ></column>
+				<column target="k5" source="jlhzs" ></column>
+				<column target="mod_num" source="zyymxzz" ></column>
+				<column target="angle" source="jxjqj" ></column>
+				<column target="gm_river" source="cwxgd" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_steady3">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="qh" source="zdlbhxj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_steady4">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="qh" source="zdlbhxj" ></column>
+			
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady5">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="qh" source="zdlbhxj" ></column>
+				
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady6">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="qv" source="qxxsj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady7">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="ship2" source="wn" ></column>
+				
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady8">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="k2" source="hh" ></column>
+				
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady9">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="qj" source="jsj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady10">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="k3" source="ck" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady11">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="k1" source="hzs" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_steady12">
+			<source_table>wxzysj</source_table>
+			<target_table>p_ship_steady</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" ></column>
+				<column target="zjxh" source="zjxh" key="true"></column>
+				<column target="ship3" source="qz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+			
+	<task id="ship_direct_suction">
+			<source_table>cdsxt</source_table>
+			<target_table>p_ship_direct_suction</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="num" source="xksl" ></column>
+				<column target="dia" source="glzj" ></column>
+				<column target="pos" source="xkwz" ></column>
+				<column target="zjxh" source="zjxh" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		<task id="ship_engine">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_engine</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="dia_define" source="cdsgzjjs" ></column>
+				<column target="dia_actual" source="cdsgzjsj" ></column>
+				
+				<column target="pos_tele" source="cdbykqdwz" ></column>
+				<column target="dia_pos" source="yjxkzjwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		<task id="ship_co2installation">
+			<source_table>qtgdmh</source_table>
+			<target_table>p_ship_co2installation</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="zl" ></column>
+				<column target="protect_space" source="bhcs" ></column>
+				<column target="protect_cabin" source="bhsmc" ></column>
+				<column target="protect_cabin_vol" source="bhsrj" ></column>
+				<column target="weight" source="gfzzl" ></column>
+				<column target="drive_typ" source="qdxs" ></column>
+				<column target="alarm_pos" source="bjkzbw" ></column>
+				<column target="discharge_pos" source="sfkzbw" ></column>
+				<column target="num" source="ps" ></column>
+				<column target="vol" source="rj" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_foam_fire_sys">
+			<source_table>gdpmmh</source_table>
+			<target_table>p_ship_foam_fire_sys</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="foam_typ" source="pmzl" ></column>
+				<column target="pump_dis" source="bpl" ></column>
+				<column target="pump_press" source="gzyl" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_wireless">
+			<source_table>wxdzz</source_table>
+			<target_table>p_ship_wireless</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="name" source="mc" ></column>
+				<column target="typ" source="xh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="kind" source="gzlb" ></column>
+				<column target="serial_no" source="jh" ></column>
+				<column target="power" source="scgl" ></column>
+				<column target="frequency" source="plfw" ></column>
+				<column target="num_band" source="bds" ></column>
+				<column target="certno" source="zsbh" ></column>
+				<column target="maker" source="zzc" ></column>
+				<column target="type_dsc" source="dscxh" ></column>
+				<column target="serial_no_dsc" source="dscjh" ></column>
+				<column target="type_nbdp" source="nbdpxh" ></column>
+				<column target="serial_no_nbdp" source="nbdpjh" ></column>
+				<column target="pos" source="azwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		<task id="ship_power_spare">
+			<source_table>bydy</source_table>
+			<target_table>p_ship_power_spare</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="kind" source="xdcxh" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="voltage" source="dy" ></column>
+				<column target="capacity" source="rl" ></column>
+				<column target="tim" source="zdgdsj" ></column>
+				<column target="pos" source="afwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_prop">
+			<source_table>tjq</source_table>
+			<target_table>p_ship_prop</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="lx" ></column>
+				<column target="num" source="sl" ></column>
+				<column target="meta" source="cl" ></column>
+				<column target="leaf_num" source="yps" ></column>
+				<column target="dia" source="zj" ></column>
+				<column target="dis" source="lj" ></column>
+				<column target="turn_to" source="lxjxx" ></column>
+				<column target="weight" source="lxjz" ></column>
+				<column target="range" source="jysyfw" ></column>
+				<column target="pno" source="cpbh" ></column>
+				<column target="certno" source="cjzsbh" ></column>
+				<column target="make_date" source="zzrq" ></column>
+				<column target="maker" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_vhf">
+			<source_table>sxdh</source_table>
+			<target_table>p_ship_vhf</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="typ" source="xh" ></column>
+				<column target="frequency" source="gzpl" ></column>
+				<column target="kind" source="gzlb" ></column>
+				<column target="power" source="scgl" ></column>
+				<column target="certno" source="zsbh" ></column>
+				<column target="serial_no" source="jh" ></column>
+				<column target="maker" source="zzc" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		
+		
+		
+		<!-- ============================ 多表导入到一个表 =================== -->
+		
+		<task id="ship_struc1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_struc</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true"/>
+				<column source="ctcl" target="materials_of_hull" />
+				<column source="jgxs" target="structure_type" />
+				<column source="jbcl" target="deck_material" />
+				<column source="qljbwz" target="deck_pos" />
+				<column source="fzbcwz" target="prevent_border_pos" />
+				<column source="bcjqjg" target="added_structure" />
+				<column source="scdwz" target="double_bottom_pos" />
+				<column source="jbcs" target="deck_layers_num" />
+				<column source="hcsl" target="hold_num" />
+				<column source="hsksl" target="hatch_num" />
+				<column source="cgxs" target="cover_type" />
+				<column source="kcx" target="resistance_sinking" />
+				<column source="jsjwz" target="in_water_pos" />
+				<column source="hcbs" target="bulkhead_x_num" />
+				<column source="tzzzgk" target="special_load" />
+				<column source="jbtzzh" target="deck_load" />
+				<column source="yhxs" target="cargo_tanks_type" />
+				<column source="bs" target="bulkhead_y_num" />
+				<column source="xzs" target="outfitting_num" />
+				<column source="msl" target="anchor_num" />
+				<column source="mjsl" target="windlass_num" />
+				<column source="dsl" target="rud_no" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_struc2">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_struc</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true"/>
+				<column source="jbgfz" target="section_num1" />
+				<column source="dbgfz" target="section_num2" />
+				<column source="jbsjz" target="section_num3" />
+				<column source="dbsjz" target="section_num4" />
+				<column source="jcwz" target="cabin_pos" />
+				<column source="scjzwz" target="superstructure_pos" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		
+		
+		<task id="ship_firemanoutfit1">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_firemanoutfit</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" ></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="put_pos" source="xfyzbcfwz" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_firemanoutfit2">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_firemanoutfit</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true"></column>
+				<column target="rid" generator="uuid" primarykey="true"></column>
+				<column target="num" source="xfyzb" ></column>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_electric1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="pdxt" target="power" />
+				<column source="jczdh" target="autosys_aut_0" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_electric2">
+			<source_table>zdkzzz</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="xh" target="autosys_type" />
+				<column source="cjzsbh" target="cert_no" />
+				<column source="zzc" target="manuf" />
+				<column source="zdy" target="main_supply" />
+				<column source="yjdy" target="emer_supply" />
+				<column source="jpkz" target="control_switch_pos_1" />
+				<column source="jcjks" target="control_switch_pos_2" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_electric3">
+			<source_table>bjxt</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="xh" target="alarm_sys_type" />
+				<column source="cjzsbh" target="alarm_sys_cert_no" />
+				<column source="zzc" target="alarm_sys_manuf" />
+				<column source="zdy" target="alarm_sys_main_supply" />
+				<column source="yjdy" target="alarm_sys_emer_supply" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_electric4">
+			<source_table>dlgy</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="fdjxz" target="electric_supply_1" />
+				<column source="fdjbc" target="electric_supply_2" />
+				<column source="zdqd" target="electric_supply_3" />
+				<column source="bz" target="electric_supply_other" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_electric5">
+			<source_table>jczdhqt</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zb" target="other" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_electric6">
+			<source_table>jxzzkz</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+
+				<column source="zjyjtczz" target="independent_emer_stop" />
+				<column source="lxjzs" target="indicator_propeller_speed" />
+				<column source="lxjxx" target="indicator_propeller_direction" />
+				<column source="lxjwz" target="indicator_propeller_location" />
+				<column source="bz" target="other_device" />
+
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_electric7">
+			<source_table>tx</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="jpkzz" target="commu_device_1" />
+				<column source="jcjks" target="commu_device_2" />
+				<column source="ljycs" target="commu_device_3" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_electric8">
+			<source_table>pdfsdl</source_table>
+			<target_table>p_ship_electric</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<custom_sql>select count(dlxh) as dlxh ,cjdjh as cjdjh from pdfsdl group by cjdjh</custom_sql>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="dlxh" target="cable" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		<task id="ship_certinfo_add1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="d_zdy1" target="date_csh" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_certinfo_add2">
+			<source_table>qcfbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="csjcs" target="area_qcf" />
+				<column source="xjyxfl" target="flotage1" />
+				<column source="xjysfl" target="flotage2" />
+				<column source="rxsmfl" target="flotage3" />
+				<column source="cbfl" target="flotage4" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_certinfo_add3">
+			<source_table>cshbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<!--  
+			<custom_sql>select jy.jybh as jybh,jy.jyrq as jyrq ,jy.cjdjh as cjdjh,t.shqy as shqy,t.hzshrs as hzshrs from cshbc t left join jyqk jy on t.jybh = jy.jybh and jy.jyrq=(select max(jy1.jyrq) from jyqk jy1 where jy1.cjdjh = jy.cjdjh and exists(select t2.jybh from cshbc t2 where t2.jybh = jy.jybh ) )</custom_sql>
+			-->
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="shqy" target="area_csh" />
+				<column source="hzshrs" target="num_csh" />
+			</columns>
+			<where>
+				1=1
+			</where>
+			
+			<!-- 
+			<where>
+				jy.cjdjh is not null  order by jy.cjdjh
+			</where>
+			 -->
+			
+			
+		</task>
+		<task id="ship_certinfo_add4">
+			<source_table>fzkqwrbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="i_cyjts" target="num_zkq" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_certinfo_add5">
+			<source_table>hstbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="tccm" target="ship_name" />
+				<column source="btwmc" target="cargo_name" />
+				<column source="jybg" target="record" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_certinfo_add6">
+			<source_table>lszsbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="syxy" target="request_zls" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_certinfo_add7">
+			<source_table>zwsbc</source_table>
+			<target_table>p_ship_certinfo_add</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="gsy" target="harbor_area" />
+				<column source="zyxs" target="mes_zws" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<!-- ship_diesel -->
+		<task id="ship_diesel1">
+			<source_table>zfjqk</source_table>
+			<target_table>p_ship_diesel</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="zjxh" target="zjxh" key="true"/>
+				<column source="lx" target="main_typ" />
+				<column source="xh" target="main_mod" />
+				<column source="sl" target="main_num" />
+				<column source="gs" target="main_cylinder_num" />
+				<column source="gj" target="main_cylinder_dia" />
+				<column source="xc" target="main_stroke" />
+				<column source="edgl" target="main_pow" />
+				<column source="edzs" target="main_speed" />
+				<column source="zcxzfx" target="main_dir" />
+				<column source="ryzl" target="main_fuel" />
+				<column source="wz" target="main_pos" />
+				<column source="qdfs" target="main_start_mode" />
+				<column source="zdqdyl" target="main_min_st_press" />
+				<column source="zgqdyl" target="main_max_st_press" />
+				<column source="zdbzyl" target="main_max_exp_press" />
+				<column source="hxsj" target="main_rev_dur" />
+				<column source="jdclsl" target="main_block_material" />
+				<column source="ztkwzsl" target="main_thrust_pos" />
+				<column source="qzzdbjc" target="main_arm_dis" />
+				<column source="jh" target="main_pno" />
+				<column source="cjzsbh" target="main_certno" />
+				<column source="zzrq" target="main_make_date" />
+				<column source="zzc" target="main_maker" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_diesel2">
+			<source_table>yjgfj</source_table>
+			<target_table>p_ship_diesel</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="zjxh" target="zjxh" key="true"/>
+				<column source="xh" target="fan_mod" />
+				<column source="sl" target="fan_num" />
+				<column source="pl" target="fan_capa" />
+				<column source="gzyl" target="fan_press" />
+				<column source="cjzsbh" target="fan_certno" />
+				<column source="zzc" target="fan_maker" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_diesel3">
+			<source_table>zjzyq</source_table>
+			<target_table>p_ship_diesel</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column source="zjxh" target="zjxh" key="true"/>
+				<column source="xh" target="booster_mod" />
+				<column source="sl" target="booster_num" />
+				<column source="edzs" target="booster_speed" />
+				<column source="sqyl" target="booster_press" />
+				<column source="cjzsbh" target="booster_certno" />
+				<column source="zzc" target="booster_maker" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+		
+		
+		
+		
+		<task id="ship_prevent_pollute1">
+			<source_table>hcfyw</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cbzl" target="shiptype" />
+				<column source="xcxyc" target="old_new" />
+				<column source="yw21a" target="yes_no" />
+				<column source="yw22b" target="filt_ppm" />
+				<column source="yw241a" target="filt_standard" />
+				<column source="yw25a" target="filt_capacity" />
+				<column source="v_clzzjyrk" target="dispose_standard" />
+				<column source="v_yfjjyrk" target="division_standard" />
+				<column source="yw32a" target="measure" />
+				<column source="yw62a" target="water_num" />
+				<column source="yw62b" target="water_capacity" />
+				<column source="yw62c" target="water_percent" />
+				<column source="yw62d" target="water_no" />
+				<column source="yw242" target="check6" />
+				<column source="yw243" target="check7" />
+				<column source="yw231" target="check8" />
+				<column source="yw234" target="check9" />
+				<column source="yw22" target="check10" />
+				<column source="yw31" target="check11" />
+				<column source="yw31" target="check12" />
+				<column source="yw41" target="check14" />
+				<column source="yw51" target="check17" />
+				<column source="yw51" target="check18" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+
+		<task id="ship_prevent_pollute2">
+			<source_table>fshwsbc</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="wszsbh" target="sewage_dispose_certno" />
+				<column source="wszzc" target="sewage_dispose_maker" />
+				<column source="wsrkbz" target="sewage_dispose_stand1" />
+				<column source="wspfbz" target="ewage_dispose_stand2" />
+				<column source="fsxh" target="sewage_crush_type" />
+				<column source="fszsbh" target="sewage_crush_certno" />
+				<column source="fszzc" target="sewage_crush_maker" />
+				<column source="fswz" target="sewage_all_location" />
+				<column source="bz" target="sewage_remark" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute3">
+			<source_table>ftydytbz</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="bz" target="remark2" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute4">
+			<source_table>fzhyyhwz</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="bz" target="remark3" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute5">
+			<source_table>fzkqwrbc</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="i_cyjts" target="power_river" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_prevent_pollute6">
+			<source_table>fzljwrbc</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="v_zzxs" target="pollute_typ" />
+				<column source="i_hdssl" target="pollute_move_num" />
+				<column source="n_hdsrj" target="pollute_move_cubage" />
+				<column source="i_gdssl" target="pollute_fix_num" />
+				<column source="n_gdsrj" target="pollute_fix_cubage" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute7">
+			<source_table>fzywrbz</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="bz" target="remark1" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute8">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cbzzl" target="deadweight" />
+				<column source="cbzzrl" target="capacity" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute9">
+			<source_table>jqcsfwr</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />				 
+				<column source="fywsbmcyy" target="exempt_reason" />
+				<column source="mctj" target="exempt_condition" />
+				<column source="bzpfjtazwj" target="pos" />				  
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+
+		<task id="ship_prevent_pollute10">
+			<source_table>ysbjzz</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />				 
+				<column source="azwz" target="pos_river" />
+				<column source="xh" target="type_river" />				  
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_prevent_pollute11">
+			<source_table>hfsbc</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />				 
+				<column source="clzzxs" target="sewage_dispose_type" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_prevent_pollute12">
+			<source_table>fshwsbc</source_table>
+			<target_table>p_ship_prevent_pollute</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />				 
+				<column source="v_shwsclxs" target="sewage_dispose_type" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		<task id="ship_special_add_req_gas1">
+			<source_table>zsybc</source_table>
+			<target_table>p_ship_special_add_req_gas</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cx" target="gas_type" />
+				<column source="yczrj" target="gas_capacity" />
+				<column source="hjqw" target="gas_air_temp" />
+				<column source="hjsw" target="gas_water_temp" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_special_add_req_gas2">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_special_add_req_gas</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="yhczdzhmd" target="gas_max_load" />
+				<column source="yhcsjwd" target="gas_design_temp" />
+				<column source="yhczdyl" target="gas_design_press" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_special_add_req_gas3">
+			<source_table>szyhqzt</source_table>
+			<target_table>p_ship_special_add_req_gas</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="bz" target="gas_other" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_accumulator1">
+			<source_table>xdc</source_table>
+			<target_table>p_ship_accumulator</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zjxh" target="zjxh" key="true"/>
+				<column source="xh" target="accumulator_type" />
+				<column source="sl" target="accumulator_num" />
+				<column source="yt" target="accu_usage" />
+				<column source="gddy" target="voltage" />
+				<column source="rl" target="capacity" />
+				<column source="cdfs" target="charge_mode" />
+				<column source="afwz" target="pos" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_accumulator2">
+			<source_table>cfdb</source_table>
+			<target_table>p_ship_accumulator</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zjxh" target="zjxh" key="true"/>
+				<column source="xh" target="emer_accumulator_type" />
+				<column source="cddy" target="emer_voltage" />
+				<column source="cddl" target="emer_current" />
+				<column source="zsbh" target="emer_cert_no" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_add_req_chemic1">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_add_req_chemic</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="yhczdzhmd" target="chemic_max_load" />
+				<column source="yhcsjwd" target="chemic_design_temp" />
+				<column source="yhczdzhmd" target="chemic_design_press" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_add_req_chemic2">
+			<source_table>zszbc</source_table>
+			<target_table>p_ship_add_req_chemic</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="hcjgxs" target="chemic_struct_form" />
+				<column source="hczrj" target="chemic_capacity" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_special_req_float">
+			<source_table>zfcbc</source_table>
+			<target_table>p_ship_special_req_float</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="fcwlx" target="float_type" />
+				<column source="sjsjnl" target="float_lift_force" />
+				<column source="wnjk" target="float_clear_width" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_special_add_req_roro">
+			<source_table>ckdc</source_table>
+			<target_table>p_ship_special_add_req_roro</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="tfcs" target="roro_ventilation" />
+				<column source="pl" target="roro_pump_capa" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_engine1">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_engine</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cdsgzjjs" target="dia_define" />
+				<column source="cdsgzjsj" target="dia_actual" />
+				<column source="yjxkzjwz" target="dia_pos" />
+				<column source="cdbykqdwz" target="pos_tele" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_engine2">
+			<source_table>jczdhqt</source_table>
+			<target_table>p_ship_engine</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zb" target="other" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_cargo_soliddanger">
+			<source_table>wxhwb</source_table>
+			<target_table>p_ship_cargo_soliddanger</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<custom_sql>select  jy.jybh as jybh,jy.jyrq as jyrq ,jy.cjdjh as cjdjh,t.hpmc as hpmc,t.zhl as zhl,t.zhcs as zhcs from wxhwb t left join jyqk jy on t.jybh = jy.jybh and jy.jyrq=(select  max(jy1.jyrq) from jyqk jy1 where jy1.cjdjh = jy.cjdjh and exists(select t2.jybh from wxhwb t2 where t2.jybh = jy.jybh ) ) where jy.cjdjh is not null  order by jy.cjdjh </custom_sql>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true"  />
+				<column source="hpmc" target="item_name" />
+				<column source="zhl" target="weight" />
+				<column source="zhcs" target="pos" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_rebuild1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_rebuild</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="cbgjc" target="builder" />
+				<column source="gjrq" target="rebuild_date" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_rebuild2">
+			<source_table>cbbcqk</source_table>
+			<target_table>p_ship_rebuild</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="rid" generator="uuid" primarykey="true" />
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="zdgjbw" target="portion" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		<task id="ship_special_add_req1">
+			<source_table>ybsm</source_table>
+			<target_table>p_ship_special_add_req</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="lccrj" target="refrig_capa" />
+				<column source="zljzsl" target="refrig_unit_num" />
+				<column source="zlfs" target="refrig_mod" />
+				<column source="zljzl" target="refrig_kor" />
+				<column source="sjwd" target="refrig_dst" />
+				<column source="hjwd" target="refrig_evt" />
+				<column source="sjzll" target="refrig_unit_capa" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_special_add_req2">
+			<source_table>hwlczzqt</source_table>
+			<target_table>p_ship_special_add_req</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="bz" target="refrig_other" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<!-- 应急发电机一律不导入,全部导入到主发电机表中了 -->
+		<!-- 
+		<task id="ship_gen_emer1">
+			<source_table>fdjqk</source_table>
+			<target_table>p_ship_gen_emer</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="ydjqdfs" target="primer_startmode" />
+				<column source="ydjsl" target="primer_num" />
+				<column source="ydjgl" target="primer_output" />
+				<column source="ydjzs" target="primer_speed" />
+				<column source="ydjcpbh" target="primer_s_no" />
+				<column source="ydjzsbh" target="primer_cert_no" />
+				<column source="ydjafwz" target="primer_location" />
+				<column source="ydjzzrq" target="primer_manu_date" />
+				<column source="ydjzzc" target="primer_manuf" />
+				<column source="ydjcdff" target="primer_mes" />
+				<column source="fdjxh" target="gen_type" />
+				<column source="fdjgl" target="gen_pow" />
+				<column source="fdjzs" target="gen_speed" />
+				<column source="fdjsl" target="gen_num" />
+				<column source="dl" target="gen_current" />
+				<column source="fdjpl" target="gen_freq" />
+				<column source="dy" target="gen_voltage" />
+				<column source="fdjglis" target="gen_factor" />
+				<column source="ydjcpbh" target="gen_s_no" />
+				<column source="fdjzsbh" target="gen_cert_no" />
+				<column source="ydjzzc" target="gen_manuf" />
+				<column source="ydjzzrq" target="gen_manu_date" />
+				<column source="ydjxh" target="primer_type" />
+				<column source="ydjxs" target="primer_kop" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="ship_gen_emer2">
+			<source_table>zpdb</source_table>
+			<target_table>p_ship_gen_emer</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="dlzl" target="gen_current_type" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		 -->
+		
+		
+		<task id="ship_phasesdate1">
+			<source_table>cbjbqk</source_table>
+			<target_table>p_ship_phasesdate</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="htqdrq" target="contract" />
+				<column source="aflgrq" target="keel" />
+				<column source="xsrq" target="lauch" />
+				<column source="jzwgrq" target="fnsh" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		<task id="ship_phasesdate2">
+			<source_table>jzzk</source_table>
+			<target_table>p_ship_phasesdate</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<custom_sql>select jy.cjdjh as cjdjh,t.kgrq as kgrq from jzzk t left join jyqk jy on t.jybh = jy.jybh where cjdjh is not null</custom_sql>
+			<columns>
+				<column target="cjdjh" source="cjdjh" mark="true" key="true" />
+				<column source="kgrq" target="sta" />
+			</columns>
+			<where>
+				jy.cjdjh is not null
+			</where>
+		</task>
+		
+		
+		
+		
+	</tasklist>
+</dataaccess>

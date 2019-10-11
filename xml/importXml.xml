@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<dataaccess>
+	<source_service>sqlserverService</source_service>
+	<target_service>oracleService</target_service>
+	
+	
+	
+	<tasklist>
+		
+		<task id="test_deleteme01">
+			<source_table>cbjbqk</source_table>
+			<target_table>test_deleteme</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<custom_sql>select 1 as a ,2 as b,3 as c,4 as d,5 as e from cbjbqk</custom_sql>
+			<columns>
+				<column target="id" generator="uuid" primarykey="true" />
+				<column target="shipname" source="a" />
+				<column target="hk" source="b" />
+				<column target="c01" source="c" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="test_deleteme02">
+			<source_table>cbjbqk</source_table>
+			<target_table>test_deleteme</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<columns>
+				<column target="id" generator="uuid" primarykey="true" />
+				<column target="shipname" source="cjdjh" as="cjdjh1"/>
+				<column target="hk" source="cjdjh" as="cjdjh1"/>
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		<task id="test_deleteme03">
+			<source_table>cbjbqk</source_table>
+			<target_table>test_deleteme</target_table>
+			<import_type>INSERT</import_type>
+			<clear>true</clear>
+			<custom_sql>select s.cjdjh as cjdjh,(select t.tzcddw from cbbcqk t where t.cjdjh = s.cjdjh) as b,(select t2.xh from zdkzzz t2 where t2.cjdjh = s.cjdjh) as c,xsrq  from cbjbqk s</custom_sql>
+			<columns>
+				<column target="id" generator="uuid" primarykey="true" />
+				<column target="shipname" source="cjdjh" />
+				<column target="hk" source="b" />
+				<column target="c01" source="c" />
+				<column target="c02" source="xsrq" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		<task id="test_deleteme04">
+			<source_table>cbjbqk</source_table>
+			<target_table>test_deleteme</target_table>
+			<import_type>INSERTORUPDATE</import_type>
+			<clear>false</clear>
+			<custom_sql>select s.cjdjh as cjdjh,(select t.tzcddw from cbbcqk t where t.cjdjh = s.cjdjh) as b,(select t2.xh from zdkzzz t2 where t2.cjdjh = s.cjdjh) as c,xsrq  from cbjbqk s</custom_sql>
+			<columns>
+				<column target="id" generator="uuid" primarykey="true" />
+				<column target="shipname" source="cjdjh" key="true"/>
+				<column target="hk" source="b" />
+				<column target="c01" source="c" />
+				<column target="c02" source="xsrq" />
+			</columns>
+			<where>
+				1=1
+			</where>
+		</task>
+		
+		
+		
+		
+	</tasklist>
+</dataaccess>
